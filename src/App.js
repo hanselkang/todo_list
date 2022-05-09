@@ -15,7 +15,7 @@ function App() {
 
   const itemNodes = items.map((item, index) => {
     return (
-      <li key = { index } className={item.priority == "low" ? "low" : "high"}>
+      <li key = { index } className={item.priority == "high" ? "high" : "low"}>
         <span>{item.name}</span>
       </li>
     )
@@ -50,7 +50,7 @@ function App() {
     <>
       <h1>ToDo's</h1>
       <form onSubmit = { saveNewItem }>
-        <input id="new-item" type="text" onChange={ handleItemInput } value={newItem}/>
+        <input id="new-item" type="text" onChange={ handleItemInput } value={newItem} required/>
         
         <label htmlFor="high">High</label>
         <input type="radio" name="radioButton" value="high" onChange={handleRadio}></input>
